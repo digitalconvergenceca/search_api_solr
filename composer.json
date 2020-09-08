@@ -20,7 +20,7 @@
         "source": "http://git.drupal.org/project/search_api_solr.git"
     },
     "require": {
-        "solarium/solarium": "4.2.*",
+        "solarium/solarium": "4.2.0 as 6.0.2",
         "drupal/search_api": "~1.17"
     },
     "require-dev": {
