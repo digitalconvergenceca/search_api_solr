@@ -2,7 +2,8 @@
 
 namespace Drupal\search_api_solr;
 
-use Drupal\Component\Plugin\ConfigurablePluginInterface;
+# use Drupal\Component\Plugin\ConfigurablePluginInterface;
+use Drupal\search_api\Plugin\ConfigurablePluginInterface;
 use Solarium\Core\Client\Endpoint;
 use Solarium\Core\Client\Request;
 use Solarium\Core\Client\Response;

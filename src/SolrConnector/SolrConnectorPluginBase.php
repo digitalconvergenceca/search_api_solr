@@ -390,7 +390,7 @@ abstract class SolrConnectorPluginBase extends ConfigurablePluginBase implements
    * {@inheritdoc}
    */
   public function getServerInfo($reset = FALSE) {
-    return $this->getDataFromHandler('server', 'admin/info/system', $reset);
+    return $this->getDataFromHandler('core', 'admin/info/system', $reset);
   }
 
   /**
@@ -471,7 +471,7 @@ abstract class SolrConnectorPluginBase extends ConfigurablePluginBase implements
    * {@inheritdoc}
    */
   public function pingServer() {
-    return $this->doPing(['handler' => 'admin/info/system'], 'server');
+    return $this->doPing(['handler' => 'admin/info/system'], 'core');
   }
 
   /**
@@ -567,14 +567,14 @@ abstract class SolrConnectorPluginBase extends ConfigurablePluginBase implements
    * {@inheritdoc}
    */
   public function serverRestGet($path) {
-    return $this->restRequest('server', $path);
+    return $this->restRequest('core', $path);
   }
 
   /**
    * {@inheritdoc}
    */
   public function serverRestPost($path, $command_json = '') {
-    return $this->restRequest('server', $path, Request::METHOD_POST, $command_json);
+    return $this->restRequest('core', $path, Request::METHOD_POST, $command_json);
   }
 
   /**

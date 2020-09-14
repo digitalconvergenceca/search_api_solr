@@ -4,6 +4,7 @@ namespace Drupal\search_api_solr\Plugin\Derivative;
 
 use Drupal\Component\Plugin\Derivative\DeriverBase;
 use Drupal\Core\Entity\EntityManagerInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\Discovery\ContainerDeriverInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\StringTranslation\TranslationInterface;
@@ -26,12 +27,12 @@ class DevelLocalTask extends DeriverBase implements ContainerDeriverInterface {
   /**
    * Creates an DevelLocalTask object.
    *
-   * @param \Drupal\Core\Entity\EntityManagerInterface $entity_manager
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_manager
    *   The entity manager.
    * @param \Drupal\Core\StringTranslation\TranslationInterface $string_translation
    *   The translation manager.
    */
-  public function __construct(EntityManagerInterface $entity_manager, TranslationInterface $string_translation) {
+  public function __construct(EntityTypeManagerInterface $entity_manager, TranslationInterface $string_translation) {
     $this->entityManager = $entity_manager;
     $this->stringTranslation = $string_translation;
   }
@@ -41,7 +42,7 @@ class DevelLocalTask extends DeriverBase implements ContainerDeriverInterface {
    */
   public static function create(ContainerInterface $container, $base_plugin_id) {
     return new static(
-      $container->get('entity.manager'),
+      $container->get('entity_type.manager'),
       $container->get('string_translation')
     );
   }
