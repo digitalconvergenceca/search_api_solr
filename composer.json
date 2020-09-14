@@ -1,5 +1,5 @@
 {
-    "name": "drupal/search_api_solr",
+    "name": "digitalconvergenceca/search_api_solr",
     "description": "Offers an implementation of the Search API that uses an Apache Solr server for indexing content.",
     "type": "drupal-module",
     "homepage": "https://www.drupal.org/project/search_api_solr",
